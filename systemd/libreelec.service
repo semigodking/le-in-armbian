@@ -1,0 +1,32 @@
+[Unit]
+Description=LibreELEC-in-docker
+After=network.target docker.service
+Before=display-manager.service
+#ConditionPathExists=/usr/local/bin/libreelec-service-exec.sh
+Conflicts=display-manager.service
+Conflicts=recalbox.service
+
+[Service]
+# StandardInput=tty-force
+EnvironmentFile=/etc/environment
+EnvironmentFile=-/etc/default/libreelec-launcher
+Environment=ROOTFS=/path/to/le-in-armbian/rootfs/
+ExecStartPre=/path/to/le-in-armbian/systemd/libreelec-service-pre.sh
+ExecStart=/path/to/le-in-armbian/systemd/libreelec-service-start.sh
+ExecStopPost=/path/to/le-in-armbian/systemd/libreelec-service-post.sh
+KillMode=process
+User=root
+
+# Uncomment this to always restart this container on shutdown
+Restart=on-failure
+
+# docker returns 130 on shutdown, 129 on reboot
+#RestartPreventExitStatus=130 129 SIGKILL
+#SuccessExitStatus=130 129 SIGKILL
+
+Type=simple
+#type=oneshot
+#TimeoutStartSec=5m
+
+[Install]
+WantedBy=multi-user.target

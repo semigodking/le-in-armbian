@@ -54,9 +54,17 @@ By far, I use this command to start KODI.
 unshare --mount-proc -p -f -r -R rootfs/ /start_kodi.sh
 ```
 
+### Auto Start
+Simple systemd file examples are put in folder `systemd`. You need to edit the
+those files and install the `libreelec.service` in systemd. Besure to change
+environment ROOTFS to correct path.
+
 ## Performance
 This solution works quite well for me. Hardware acceleration works as well as
 HDMI CEC. H256 HW decode also works.
+
+## Known Problems
+* Keyboard and mouse not working
 
 [LibreElec]: https://libreelec.tv/
 [Armbian]: https://armbian.com/

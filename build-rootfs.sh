@@ -89,7 +89,11 @@ rmdir ./sys-mount
 
 echo "$url extracted to rootfs/"
 
+# Customize ROOTFS
 cp start_kodi.sh rootfs/
+cd rootfs/ && ln -s /run /var/run
+mkdir -p rootfs/run/dbus
+mkdir -p rootfs/home/kodi
 # cleanup
 #rm "${filename}"
 #rm "${archivename}"
