@@ -10,6 +10,7 @@ Conflicts=recalbox.service
 # StandardInput=tty-force
 EnvironmentFile=/etc/environment
 EnvironmentFile=-/etc/default/libreelec-launcher
+Environment=DISPLAY=:0.0
 Environment=ROOTFS=/path/to/le-in-armbian/rootfs/
 ExecStartPre=/path/to/le-in-armbian/systemd/libreelec-service-pre.sh
 ExecStart=/path/to/le-in-armbian/systemd/libreelec-service-start.sh

@@ -2,8 +2,7 @@
 
 ROOTFS=$(realpath $ROOTFS)
 
-mount --bind /dev $ROOTFS/dev
-mount --bind /storage $ROOTFS/storage
-mount --bind /run/dbus $ROOTFS/run/dbus
 cp /etc/resolv.conf $ROOTFS/run/libreelec/
-exit 0
+mount --bind /dev $ROOTFS/dev
+mount --bind /run/dbus $ROOTFS/run/dbus
+mount --bind /storage $ROOTFS/storage
