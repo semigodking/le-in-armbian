@@ -90,10 +90,12 @@ rmdir ./sys-mount
 echo "$url extracted to rootfs/"
 
 # Customize ROOTFS
-cp start_kodi.sh rootfs/
-cd rootfs/ && ln -s /run /var/run
-mkdir -p rootfs/run/dbus
-mkdir -p rootfs/home/kodi
+sudo cp start_kodi.sh rootfs/
+sudo ln -s /run rootfs/var/run
+sudo mkdir -p rootfs/run/dbus
+sudo mkdir -p rootfs/home/kodi
+sudo mkdir -p rootfs/run/libreelec
+sudo cp /etc/resolv.conf rootfs/run/libreelec/
 # cleanup
 #rm "${filename}"
 #rm "${archivename}"

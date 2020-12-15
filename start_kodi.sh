@@ -6,6 +6,9 @@ mount -t tmpfs tmpfs /tmp
 # Uncomment this line if you start KODI with chroot instead of unshare
 # mount -t proc proc /proc
 
+# Additional setup steps
+/usr/bin/openssl-config
+
 # After chroot
 #export __GL_YIELD=USLEEP
 #export DISPLAY=:0.0
@@ -16,7 +19,6 @@ export KODI_TEMP=/home/kodi/.kodi/temp
 export KODI_HOME=/usr/share/kodi/
 
 # Prepare configs
-mkdir -p /run/libreelec
 /usr/lib/kodi/kodi-config
 
 # Run KODI
