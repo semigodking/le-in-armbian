@@ -93,9 +93,10 @@ echo "$url extracted to rootfs/"
 sudo cp start_kodi.sh rootfs/
 sudo ln -s /run rootfs/var/run
 sudo mkdir -p rootfs/run/dbus
-sudo mkdir -p rootfs/home/kodi
 sudo mkdir -p rootfs/run/libreelec
+sudo mkdir -p rootfs/mnt/storage
 sudo cp /etc/resolv.conf rootfs/run/libreelec/
+sudo cp /etc/hosts rootfs/run/libreelec/
 # cleanup
 #rm "${filename}"
 #rm "${archivename}"

@@ -14,8 +14,8 @@ mount -t tmpfs tmpfs /tmp
 #export DISPLAY=:0.0
 #export WAYLAND_DISPLAY=wayland-0
 #export SDL_MOUSE_RELATIVE=0
-export HOME=/home/kodi
-export KODI_TEMP=/home/kodi/.kodi/temp
+export HOME=/storage
+export KODI_TEMP=/storage/.kodi/temp
 export KODI_HOME=/usr/share/kodi/
 
 # Prepare configs
