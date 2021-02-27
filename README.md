@@ -20,6 +20,7 @@ This step may be optional for other hardwares. If HDMI CEC is not important for
 you, you can also skip this step. By default, legacy kernel (4.4.x) does not have
 CEC driver enabled. We need to change default config to enable kernel module and
 rebuild kernel.
+**No longer required for latest legacy kernel for RK3399 based boards!**
 
 Follow [Building Armbian](https://docs.armbian.com/Developer-Guide_Build-Preparation/) to build and replace kernel.
 
